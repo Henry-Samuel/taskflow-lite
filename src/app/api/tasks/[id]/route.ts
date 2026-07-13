@@ -34,6 +34,7 @@ export async function PATCH(request: Request) {
   return NextResponse.json({ id, updated: true });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function DELETE(_request: Request) {
   return NextResponse.json({ deleted: false, reason: 'detail endpoint placeholder' });
 }
