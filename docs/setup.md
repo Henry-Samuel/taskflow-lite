@@ -1,15 +1,15 @@
-# Week 3 - Taskflow Lite notes
+# Setup
 
-## What's wired
+## Prerequisites
 
-- SQLite-backed `Task` model via Prisma.
-- `/api/tasks` list/creation route with minimal validation and CUID-style IDs.
-- `/api/tasks/[id]` placeholder detail route.
-- Minimal Next.js app shell using Tailwind 4.
+- Node.js >= 18
+- npm >= 9
+- SQLite available locally
 
-## Launch checklist
+## First run
 
 ```bash
+cp .env.example .env
 npm install
 npx prisma db push
 npm run lint
@@ -17,7 +17,15 @@ npm run build
 npm run dev
 ```
 
-## Known gaps
+Open `http://localhost:3000`.
 
-- Shadcn components are scaffolded in structure, but only minimal UI is wired in this commit.
-- The detail route is a placeholder; full PATCH/DELETE is planned for next week.
+## Project overview
+
+- `/api/tasks` handles list, create, and update/delete operations.
+- `/api/tasks/[id]` returns a single task.
+- Client UI lives in `src/components/TaskList.tsx` and POSTs to `/api/tasks`.
+
+## Development notes
+
+- Run `npm run lint` before committing.
+- Use `npx prisma db push --force-reset` only when you need to reinitialize local data.
