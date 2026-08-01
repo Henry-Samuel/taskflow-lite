@@ -100,6 +100,7 @@ NEXT_PUBLIC_DESCRIPTION="A minimal task manager for focused weekly work."
 ## Author
 
 Henry Samuel
-- GitHub: https://github.com/Henry-Samuel
+- GitHub: https://github.com/Henry-Samuel/taskflow-lite
+- Repository: https://github.com/Henry-Samuel/taskflow-lite
 - LinkedIn: https://www.linkedin.com/in/samuel-henry-372b71b5/
 - Email: henry.samuel@proton.me
