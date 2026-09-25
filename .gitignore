@@ -11,8 +11,3 @@ dev.db
 .netlify
 *.log
 coverage
-__pycache__
-.venv
-.idea
-.vscode
-.DS_Store

@@ -37,7 +37,6 @@ NEXT_PUBLIC_DESCRIPTION="A minimal task manager for focused weekly work."
 taskflow-lite/
 ├── prisma/
 │   └── schema.prisma
-├── public/
 ├── docs/
 ├── src/
 │   ├── app/
