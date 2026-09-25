@@ -1,17 +1,17 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/prisma";
 
-function toId(input: unknown) {
-  if (typeof input !== "string") return null;
-  const trimmed = input.trim();
+function parseId(raw: unknown): string | null {
+  if (typeof raw !== "string") return null;
+  const trimmed = raw.trim();
   return trimmed.length > 0 ? trimmed : null;
 }
 
 export async function GET(
   _request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = toId(params.id);
+  const id = parseId((await params).id);
 
   if (!id) {
     return NextResponse.json(
@@ -42,9 +42,9 @@ export async function GET(
 
 export async function PATCH(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = toId(params.id);
+  const id = parseId((await params).id);
 
   if (!id) {
     return NextResponse.json(
@@ -117,9 +117,9 @@ export async function PATCH(
 
 export async function DELETE(
   _request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
-  const id = toId(params.id);
+  const id = parseId((await params).id);
 
   if (!id) {
     return NextResponse.json(
