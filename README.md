@@ -33,26 +33,39 @@ NEXT_PUBLIC_DESCRIPTION="A minimal task manager for focused weekly work."
 
 ## Project Structure
 
-```
+```text
 taskflow-lite/
+├── .github/
+│   └── workflows/
+│       └── tests.yml
+├── docs/
+│   └── setup.md
 ├── prisma/
 │   └── schema.prisma
-├── docs/
 ├── src/
 │   ├── app/
 │   │   ├── api/
 │   │   │   └── tasks/
-│   │   │       └── [id]/
-│   │   │           └── route.ts
+│   │   │       ├── [id]/
+│   │   │       │   └── route.ts
+│   │   │       └── route.ts
 │   │   ├── globals.css
 │   │   ├── layout.tsx
 │   │   └── page.tsx
+│   ├── components/
+│   │   └── TaskList.tsx
 │   └── lib/
+│       └── prisma.ts
 ├── .env.example
 ├── .gitignore
+├── LICENSE
+├── README.md
 ├── eslint.config.mjs
+├── next-env.d.ts
 ├── next.config.ts
+├── package-lock.json
 ├── package.json
+├── postcss.config.mjs
 └── tsconfig.json
 ```
 
